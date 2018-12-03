@@ -1,6 +1,5 @@
 import random
-wordbank =
-['Adult',
+wordbank =['Adult',
 'Aeroplane', 
 'Air', 
 'Aircraft Carrier', 
@@ -233,7 +232,7 @@ wordbank =
 'Worm', 
 'X-ray']
 
-word = random.choice(wordbank)
+word = random.choice(wordbank).lower()
 name = raw_input("What is your name? ")
 
 print "Hello, " + name, "Let's play hangman!"
@@ -264,4 +263,22 @@ while turns > 0:
     if failed == 0:        
         print "You won!"  
 
-        break              
+        break
+    print
+ 
+
+    guess = raw_input("guess a character:").lower()
+
+    guesses += guess                    
+
+    if guess not in word:  
+ 
+        turns -= 1        
+ 
+        print "Wrong"    
+ 
+        print "You have", + turns, 'more guesses' 
+ 
+        if turns == 0:           
+    
+            print "Sorry, word was " + word 
