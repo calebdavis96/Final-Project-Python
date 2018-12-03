@@ -232,3 +232,16 @@ wordbank =
 'Woman', 
 'Worm', 
 'X-ray']
+
+word_bank = random.choice(wordbank)
+name = raw_input("What is your name? ")
+
+print "Hello, " + name, "Let's play hangman!"
+
+print "Start guessing..."
+
+word = word_bank
+
+guesses = ''
+
+turns = 10
