@@ -235,50 +235,45 @@ wordbank =['Adult',
 word = random.choice(wordbank).lower()
 name = raw_input("What is your name? ")
 
-print "Hello, " + name, "Let's play hangman!"
-
-print "Start guessing..."
+print("Hello, ") + name, ("Let's play hangman!")
+print("Start guessing...")
 
 
 guesses = ''
-
 turns = 10
-
 while turns > 0:         
-
-    failed = 0             
-   
+    failed = 0               
     for char in word:      
-
         if char in guesses:    
     
             print char,    
 
         else:
     
-            print "_",     
+            print("_"),     
        
             failed += 1    
 
     if failed == 0:        
-        print "You won!"  
+        print("You won!")
 
         break
-    print
- 
+    print""
+    valid_guess = False
+    while not valid_guess:
+        guess = raw_input("Guess a character:").lower()
+        if len(guess) > 1:
+            print("Guess too many characters!")
+        else:
+            valid_guess = True
+        
+    
 
-    guess = raw_input("guess a character:").lower()
-
-    guesses += guess                    
-
+    guesses += guess                
     if guess not in word:  
- 
         turns -= 1        
- 
-        print "Wrong"    
- 
-        print "You have", + turns, 'more guesses' 
- 
+        print ("Wrong")    
+        print ("You have"), + turns, ('more guesses' )
         if turns == 0:           
     
-            print "Sorry, word was " + word 
+            print ("Sorry, word was ") + word
