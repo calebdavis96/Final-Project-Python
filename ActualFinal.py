@@ -233,7 +233,7 @@ wordbank =['Adult',
 'X-ray']
 
 word = random.choice(wordbank).lower()
-name = raw_input("What is your name? ")
+name = raw_input("What's your name? ")
 
 print("Hello, ") + name, ("Let's play hangman!")
 print("Start guessing...")
@@ -258,12 +258,12 @@ while turns > 0:
         print("You won!")
 
         break
-    print""
+    print("")
     valid_guess = False
     while not valid_guess:
         guess = raw_input("Guess a character:").lower()
         if len(guess) > 1:
-            print("Guess too many characters!")
+            print("One character at a time please!")
         else:
             valid_guess = True
         
